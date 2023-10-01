@@ -2,7 +2,7 @@
 
 # Social multiplication formacion
 
-![alt text](http://url/to/img.png)
+![alt text](https://github.com/kedi1991/Huberus_Formacion/blob/main/src/main/resources/program_design.JPG)
 
 Simple overview of use/purpose.
 
