@@ -25,7 +25,7 @@ public class MultiplicationServiceImpl implements MultiplicationService{
 	@Override
 	public boolean checkAttempt(MultiplicationResultAttempt resultAttempt) {
 		// TODO Auto-generated method stub
-		return false;
+		return resultAttempt.getResultAttempt() == resultAttempt.getMultiplication().getFactorA() * resultAttempt.getMultiplication().getFactorB();
 	}
 
 }
