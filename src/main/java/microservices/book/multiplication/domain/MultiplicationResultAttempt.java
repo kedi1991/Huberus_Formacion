@@ -1,7 +1,10 @@
 package microservices.book.multiplication.domain;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.GeneratedValue;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -22,7 +25,12 @@ public final class MultiplicationResultAttempt {
 	@GeneratedValue
 	private Long Id;
 	
+	@ManyToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "USER_ID")
 	private final User user;
+	
+	@ManyToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "MULTIPLICATION_ID")
 	private final Multiplication multiplication;
 	private final int resultAttempt;
 	private final boolean correct;
