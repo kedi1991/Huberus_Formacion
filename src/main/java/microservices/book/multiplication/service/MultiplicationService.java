@@ -1,5 +1,7 @@
 package microservices.book.multiplication.service;
 
+import java.util.List;
+
 import org.hamcrest.Matcher;
 
 import microservices.book.multiplication.domain.Multiplication;
@@ -22,4 +24,6 @@ Multiplication createRandomMultiplication();
 boolean checkAttempt(final MultiplicationResultAttempt resultAttempt);
 
 Object checkAttempt(Matcher<MultiplicationResultAttempt> any);
+
+List<MultiplicationResultAttempt> getStatsForUser(String userAlias);
 }

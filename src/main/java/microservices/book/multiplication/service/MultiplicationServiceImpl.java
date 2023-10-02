@@ -13,6 +13,7 @@ import org.springframework.util.Assert;
 
 import jakarta.transaction.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -67,6 +68,11 @@ class MultiplicationServiceImpl implements MultiplicationService {
 	public Object checkAttempt(Matcher<MultiplicationResultAttempt> any) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	@Override
+	public List<MultiplicationResultAttempt> getStatsForUser(String userAlias) {
+		return attemptRepository.findTop5ByUserAliasOrderByIdDesc(userAlias);
 	}
 }
 
