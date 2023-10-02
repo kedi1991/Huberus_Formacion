@@ -49,8 +49,9 @@ An in-depth paragraph about your project and overview of use.
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
+* Acceda a http://localhost:8080/index.html e interactúe con el documento html para
+comprobar que soporta la funcionalidad deseada.
+
 ```
 code blocks for commands
 ```
