@@ -1,5 +1,7 @@
 package microservices.book.multiplication.service;
 
+import org.hamcrest.Matcher;
+
 import microservices.book.multiplication.domain.Multiplication;
 import microservices.book.multiplication.domain.MultiplicationResultAttempt;
 
@@ -18,4 +20,6 @@ Multiplication createRandomMultiplication();
 * multiplication, false otherwise.
 */
 boolean checkAttempt(final MultiplicationResultAttempt resultAttempt);
+
+Object checkAttempt(Matcher<MultiplicationResultAttempt> any);
 }

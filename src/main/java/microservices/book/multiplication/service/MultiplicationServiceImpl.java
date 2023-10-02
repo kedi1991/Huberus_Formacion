@@ -1,5 +1,6 @@
 package microservices.book.multiplication.service;
 
+import org.hamcrest.Matcher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +27,11 @@ public class MultiplicationServiceImpl implements MultiplicationService{
 	public boolean checkAttempt(MultiplicationResultAttempt resultAttempt) {
 		// TODO Auto-generated method stub
 		return resultAttempt.getResultAttempt() == resultAttempt.getMultiplication().getFactorA() * resultAttempt.getMultiplication().getFactorB();
+	}
+	@Override
+	public Object checkAttempt(Matcher<MultiplicationResultAttempt> any) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
