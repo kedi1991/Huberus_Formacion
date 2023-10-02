@@ -9,6 +9,8 @@ import static org.mockito.BDDMockito.given;
 import microservices.book.multiplication.domain.Multiplication;
 import microservices.book.multiplication.domain.MultiplicationResultAttempt;
 import microservices.book.multiplication.domain.User;
+import microservices.book.multiplication.repository.MultiplicationResultAttemptRepository;
+import microservices.book.multiplication.repository.UserRepository;
 
 
 public class MultiplicationServiceImplTest {
@@ -18,11 +20,18 @@ public class MultiplicationServiceImplTest {
 	@Mock
 	private RandomGeneratorService randomGeneratorService;
 
+	@Mock
+	private MultiplicationResultAttemptRepository attemptRepository;
+
+	@Mock
+	private UserRepository userRepository;
 	@Before
 	public void setUp() {
 		// With this call to initMocks we tell Mockito to process the annotations
 		MockitoAnnotations.initMocks(this);
-		multiplicationServiceImpl = new MultiplicationServiceImpl(randomGeneratorService);
+		//multiplicationServiceImpl = new MultiplicationServiceImpl(randomGeneratorService);
+		multiplicationServiceImpl = new MultiplicationServiceImpl(randomGeneratorService, attemptRepository, userRepository);
+
 	}
 
 	@Test
